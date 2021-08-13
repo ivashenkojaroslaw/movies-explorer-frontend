@@ -1,0 +1,104 @@
+.tooltip {
+  display: flex;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.3s, opacity 0.3s linear;
+  min-width: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.tooltip_show{
+  visibility: visible;
+  opacity: 1;
+}
+
+.tooltip__window {
+  max-width: 430px;
+  margin: 0 auto;
+  padding: 60px 0;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  position: relative;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tooltip__message{
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 29px;
+  text-align: center;
+  color: #000000;
+  width: 83%;
+  padding: 0;
+  margin: 0 auto;
+  display: none;
+}
+
+.tooltip__message_show{
+  display: block;
+}
+
+.tooltip__icon{
+  width: 120px;
+  height: 120px;
+  margin: 0 auto;
+  padding: 0 0 32px 0;
+  background-repeat: no-repeat;
+  display: none;
+}
+
+.tooltip__icon_type_success{
+  background-image: url(../../images/icons/success.svg);
+}
+
+.tooltip__icon_type_error{
+  background-image: url(../../images/error.svg);
+}
+
+.tooltip__icon_show{
+  display: block;
+}
+
+.tooltip__close-btn{
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  left: 100%;
+  bottom: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  border: 0;
+  cursor: pointer;
+}
+
+.tooltip__close-btn:hover{
+  opacity: 0.6;
+}
+
+
+@media screen and (max-width: 550px) {
+  .tooltip__window {    
+    width: 90vw;
+  }
+  .tooltip__close-btn {
+    left: 47%;
+    bottom: 110%;
+    width: 18.62px;
+    height: 18.62px;
+}
+}

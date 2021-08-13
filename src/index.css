@@ -1,2 +1,19 @@
 @import url(./vendor/normalize/normalize.css);
 
+@import url(./vendor/fonts/Inter-Web/inter.css);
+
+
+.root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+button:focus,
+button:focus-visible,
+a:focus,
+a:focus-visible{
+  border: 2px solid white;
+  border-radius: 3px;
+  outline: 0;
+  transform: scale(1.2);
+}
