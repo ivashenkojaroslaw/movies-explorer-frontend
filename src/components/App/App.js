@@ -36,6 +36,7 @@ function App() {
         </Route>
         <Route path="/saved-movies">
           <Header />
+          <SearchForm /> 
           <MoviesCardList isSavedMovies={true}/>
           <Footer />
         </Route>
