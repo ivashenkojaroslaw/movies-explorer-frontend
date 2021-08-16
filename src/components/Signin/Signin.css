@@ -1,0 +1,158 @@
+.signin {
+  background-color: #202020;
+  width: 100%;
+  margin: 0;
+  padding: 0 5.5% 0 5.5%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.signin__window {
+  width: 33.3%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: 10% auto;
+}
+
+.signin__logo {
+  background-color: rgba(0, 0, 0, 0);
+  background-image: url(../../images/icons/logo.svg);
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: contain;
+  width: 100%;
+  height: 38px;
+  font-size: 0;
+}
+
+.signin__header {
+  margin: 40px 0 40px 0;
+  padding: 0;
+  font-family: inherit;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+  text-align: left;
+  color: #ffffff;
+}
+
+.signin__form {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.signin__fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.signin__input-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  padding: 16px 0;
+  border-bottom: 1px solid #424242;
+}
+
+.signin__label {
+  font-family: inherit;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 12px;
+  color: #ffffff;
+  margin: 0 0 5px 0;
+  padding: 0;
+}
+
+.signin__input {
+  font-family: inherit;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  color: #ffffff;
+  background: transparent;
+  border: 0;
+}
+
+.signin__input:invalid {
+  color: #ee3465;
+}
+
+.signin__form-error {
+  font-family: inherit;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 12px;
+  color: #ee3465;
+  display: none;
+}
+
+.signin__form-error_show {
+  display: block;
+}
+
+.signin__button {
+  background: #4285f4;
+  width: 100%;
+  height: 45px;
+  border-radius: 3px;
+  border: 0;
+  padding: 0;
+  margin: 58% auto 0 auto;
+  font-family: inherit;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  color: #ffffff;
+  cursor: pointer;
+}
+.signin__button:hover {
+  opacity: 0.8;
+}
+
+.signin__text {
+  font-family: inherit;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  color: #8b8b8b;
+  align-self: center;
+}
+
+.signin__link {
+  color: #4285f4;
+  cursor: pointer;
+}
+
+.signin__link:hover {
+  color: #4285f4;
+  opacity: 0.8;
+}
+
+@media screen and (max-width: 1000px) {
+  .signin__window {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .signin__window {
+    width: 90%;
+  }
+  .signin__text {
+    font-size: 12px;
+    line-height: 15px;
+  }
+}

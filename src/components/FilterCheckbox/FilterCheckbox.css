@@ -1,0 +1,79 @@
+.checkbox {
+  display: flex;
+  justify-content: center;
+}
+
+.checkbox__input {
+  display: none;
+}
+.checkbox__input, 
+.checkbox__input:after, 
+.checkbox__input:before, 
+.checkbox__input, 
+.checkbox__input:after, 
+.checkbox__input:before, 
+.checkbox__button {
+  box-sizing: border-box;
+}
+
+.checkbox__input::selection, 
+.checkbox__input:after::selection, 
+.checkbox__input:before::selection, 
+.checkbox__input::selection, 
+.checkbox__input:after::selection, 
+.checkbox__input:before::selection, 
+.checkbox__button::selection {
+  background: none;
+}
+
+.checkbox__button {
+  outline: 0;
+  display: block;
+  width: 36px;
+  height: 20px;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+  background: #2F2F2F;
+  border-radius: 2em;
+  padding: 2px;
+  transition: all .4s ease;
+}
+.checkbox__button:after, 
+.checkbox__button:before {
+  position: relative;
+  display: block;
+  content: "";
+  width: 25%;
+  height: 50%;
+}
+.checkbox__button:after {
+  left: 5%;
+  top: 27%;
+  border-radius: 50%;
+  background: #fff;
+  transition: all .2s ease;
+}
+.checkbox__button:before {
+  display: none;
+}
+.checkbox__input:checked + .checkbox__button:after {
+  left: 60%;
+  top: 27%;
+}
+
+.checkbox__input:checked + .checkbox__button {
+  background: #3DDC84;
+}
+
+.checkbox__label {
+  font-family: inherit;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 18px;
+  color: #FFFFFF;
+  margin: 0 0 0 12px;
+  padding: 0;
+  align-self: center;
+}

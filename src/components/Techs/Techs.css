@@ -1,0 +1,133 @@
+.techs {
+  width: 100%;
+  margin: 0;
+  padding: 7.8% 5.5% 7.8% 5.5%;
+  background-color: #272727;
+  box-sizing: border-box;
+}
+
+.techs__header {
+  margin: 0;
+  padding: 0 0 23px 0;
+  font-family: inherit;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 27px;
+  letter-spacing: -0.04em;
+  color: #FFFFFF;
+  border-bottom: 1px solid #DADADA;
+}
+
+.techs__row {
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+}
+
+.techs__row_type_text {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 7.9% 0 8.8% 0;
+}
+
+.techs__row_type_techs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(84px, 90px));
+  grid-gap: 10px;
+  list-style: none;
+}
+
+.techs__text-wrapper {
+  margin: 0;
+  padding: 0;
+  max-width: 460px;
+}
+
+.techs__header-text {
+  margin: 0;
+  padding: 0;
+  font-family: inherit;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 50px;
+  line-height: 58px;
+  text-align: center;
+  letter-spacing: -0.04em;
+  color: #FFFFFF;
+}
+
+.techs__text {
+  margin: 26px 0 0 0;
+  padding: 0;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  letter-spacing: -0.04em;
+  color: #FFFFFF;
+}
+
+.techs__label {
+  margin: 0;
+  padding: 21px 0;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  letter-spacing: -0.04em;
+  color: #FFFFFF;
+  background: #303030;
+  border-radius: 10px;
+  width: 90px;
+}
+
+@media screen and (min-width: 1400px) {
+  .techs { 
+    padding: 8.6% 20% 8.6% 20%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .techs__text {
+    font-size: 12px;
+    line-height: 18px;
+  }
+  .techs__label {
+    font-size: 12px;
+    line-height: 15px;
+  }
+}
+
+@media screen and (max-width: 590px) {
+  .techs {
+    padding: 22% 6% 22% 6%;
+  }
+
+  .techs__header {
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .techs__row_type_text {
+    padding: 21.2% 0 20.5% 0;
+  }  
+
+  .techs__header-text {
+    font-size: 30px;
+    line-height: 36px;
+  }
+  
+  .techs__text {
+    font-size: 11px;
+    line-height: 16px;
+  }
+
+  .techs__label {
+    width: 84px;
+  }
+
+}
