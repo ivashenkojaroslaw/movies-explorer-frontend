@@ -72,6 +72,11 @@
   background-image: url(../../images/icons/error.svg);
 }
 
+
+.tooltip__icon_type_fail{
+  background-image: url(../../images/icons/fail.svg);
+}
+
 .tooltip__icon_show{
   display: block;
 }

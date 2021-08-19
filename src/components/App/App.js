@@ -21,8 +21,10 @@ function App() {
   const [moviesList, setMoviesList] = React.useState([]);
   const [showPreloader, setShowPreloader] = React.useState(false);
   const [tooltip, setToolTip] = React.useState({
+    isOpen: false,
     isErrorOpen: false,
     isSuccessOpen: false,
+    isFailOpen: false,
     message: ''
   })
 
@@ -30,26 +32,36 @@ function App() {
     console.log(`Что-то пошло не так ${err}`)
   }
 
-  const handleSuccessErrorToolTip = (message) => {
+  const handleShowSuccessErrorToolTip = (message) => {
     setToolTip({
-      isErrorOpen: false,
+      isOpen: true,    
       isSuccessOpen: true,
       message: message
     })
   }
 
-  const handleErrorToolTip = (message) => {
+  const handleShowErrorToolTip = (message) => {
     setToolTip({
+      isOpen: true,
       isErrorOpen: true,
-      isSuccessOpen: false,
+      message: message
+    })
+  }
+
+  const handleShowFailToolTip = (message) => {
+    setToolTip({
+      isOpen: true,      
+      isFailOpen: true,
       message: message
     })
   }
   
   const handleCloseToolTip = () => {
     setToolTip({
+      isOpen: false,
       isErrorOpen: false,
       isSuccessOpen: false,
+      isFailOpen: false,
       message: ''
     });
   }
@@ -66,12 +78,12 @@ function App() {
             setMoviesList(movies);
           }
           else {
-            handleErrorToolTip('К сожалению, по вашему запросу ничего не найдено')
+            handleShowFailToolTip('К сожалению, по вашему запросу ничего не найдено')
           }
         }
       })
       .catch(err => {
-        handleErrorToolTip('Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз')
+        handleShowErrorToolTip('Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз')
       })
       .finally(() => {
         setShowPreloader(false)

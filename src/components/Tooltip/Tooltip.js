@@ -17,7 +17,7 @@ function Tooltip({ tooltip, onClose }) {
 
 
   React.useEffect(() => {
-    if (tooltip.isSuccessOpen || tooltip.isErrorOpen) {
+    if (tooltip.isOpen) {
       document.addEventListener('keyup', closeByEscape);
     }
     else {
@@ -26,13 +26,14 @@ function Tooltip({ tooltip, onClose }) {
   }, [tooltip])
 
   return (
-    <section className={`tooltip ${(tooltip.isSuccessOpen || tooltip.isErrorOpen) ? 'tooltip_show' : ''}`} onClick={closeByClickOverlay}>
+    <section className={`tooltip ${(tooltip.isOpen) ? 'tooltip_show' : ''}`} onClick={closeByClickOverlay}>
       <div className="tooltip__window">
         <button className="tooltip__close-btn" onClick={onClose}>
           <div className="icon icon_type_close"></div>
         </button>
         <div className={`tooltip__icon tooltip__icon_type_error ${tooltip.isErrorOpen ? 'tooltip__icon_show': ''}`}></div>        
         <div className={`tooltip__icon tooltip__icon_type_success ${tooltip.isSuccessOpen ? 'tooltip__icon_show': ''}`}></div>
+        <div className={`tooltip__icon tooltip__icon_type_fail ${tooltip.isFailOpen ? 'tooltip__icon_show': ''}`}></div>   
         <p className={`tooltip__message tooltip__message_show`}>{tooltip.message}</p>
       </div>
     </section>
