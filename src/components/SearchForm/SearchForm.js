@@ -1,11 +1,20 @@
 import React from 'react';
 import './SearchForm.css';
 import FilterCheckbox from '../FilterCheckbox/FilterCheckbox';
+import { useFormWithValidation } from "../../utils/Validator/Validator";
+import { movieNamePattern } from "../../utils/regExp";
 
-function SearchForm() {
+
+function SearchForm({ handleClickBySubmit }) {
   
   const [check,  setCheck] = React.useState(true);
-  
+  const { values, handleChange, errors, isValid, resetForm } = useFormWithValidation();
+
+  const handleClickBySendData = () => {
+    handleClickBySubmit(values.name)
+    resetForm()
+  }
+
   const handleClickByCheckbox = () => {
     setCheck(!check)
   }
@@ -14,8 +23,25 @@ function SearchForm() {
     <section className="search-section">
       <form className="search-section__form">
         <fieldset className="search-section__fieldset search-section__fieldset_type_search">
-          <input type="text" className="search-section__input" placeholder="Фильм" required></input>
-          <button type="button" className="search-section__button">Найти</button>
+          <div className="search-section__wrap">
+            <input 
+                  type="text" 
+                  className="search-section__input" 
+                  placeholder="Фильм" 
+                  required
+                  name="name"
+                  value={values.name || ''}
+                  onChange={handleChange}
+                  pattern={movieNamePattern}
+                  minLength="2"
+            ></input>
+            <span className="search-section__error">{errors.name}</span>
+          </div>          
+          <button 
+            type="button" 
+            className={`search-section__button ${isValid ? '' : 'search-section__button_invalid'}`}
+            onClick={isValid ? handleClickBySendData : () => {}}          
+          >Найти</button>
         </fieldset>
         <fieldset className="search-section__fieldset search-section__fieldset_type_check">
           <FilterCheckbox check={check} onClick={handleClickByCheckbox}/> 

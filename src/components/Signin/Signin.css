@@ -87,18 +87,15 @@
   color: #ee3465;
 }
 
-.signin__form-error {
+.signin__error {
   font-family: inherit;
   font-style: normal;
   font-weight: normal;
   font-size: 10px;
   line-height: 12px;
   color: #ee3465;
-  display: none;
-}
-
-.signin__form-error_show {
   display: block;
+  padding-top: 3px;
 }
 
 .signin__button {
@@ -119,6 +116,16 @@
 }
 .signin__button:hover {
   opacity: 0.8;
+}
+
+.signin__button_invalid {
+  color: #000;
+  cursor: default;
+  background: #fff;
+}
+
+.signin__button_invalid:hover {
+  opacity: 1;
 }
 
 .signin__text {

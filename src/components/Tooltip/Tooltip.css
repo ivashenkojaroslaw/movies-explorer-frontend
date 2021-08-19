@@ -13,6 +13,7 @@
   left: 0;
   justify-content: center;
   align-items: center;
+  z-index: 15;
 }
 
 .tooltip_show{
@@ -68,7 +69,7 @@
 }
 
 .tooltip__icon_type_error{
-  background-image: url(../../images/error.svg);
+  background-image: url(../../images/icons/error.svg);
 }
 
 .tooltip__icon_show{
@@ -81,7 +82,13 @@
   position: absolute;
   left: 100%;
   bottom: 100%;
-  background-color: rgba(0, 0, 0, 0);
+  width: 35px;
+  height: 35px;
+  background-color: transparent;
+  background-image: url(../../images/icons/close.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   border: 0;
   cursor: pointer;
 }

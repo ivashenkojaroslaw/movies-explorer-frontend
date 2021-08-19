@@ -2,19 +2,27 @@ import React from 'react';
 import './MoviesCardList.css';
 import MoviesCard from '../MoviesCard/MoviesCard';
 
-import {data} from '../../utils/constants'
 
+function MoviesCardList({isSavedMovies, movies}) {
 
-function MoviesCardList({isSavedMovies}) {
+  const [countShowedMovies, setCountShowedMovies] = React.useState(5);
+
+  const handleClickByFurther = () => {
+    setCountShowedMovies(countShowedMovies+5)
+  }
 
   return (
     <section className="movies-card-list">
       {
-        data.map((item, index) => {
-          return (<MoviesCard key={index} movie={item} isSavedMovies={isSavedMovies}/>)
+        movies.map((item, index) => {
+          if (index < countShowedMovies) return (<MoviesCard key={index} movie={item} isSavedMovies={isSavedMovies}/>)
         })
       }
-      <button type="button" className={`movies-card-list__button ${isSavedMovies ? 'movies-card-list__button_hidden' : ''}`}>Еще</button>
+      <button 
+        type="button" 
+        className={`movies-card-list__button ${(isSavedMovies || movies.length <= countShowedMovies) ? 'movies-card-list__button_hidden' : ''}`}
+        onClick={handleClickByFurther}
+      >Еще</button>
     </section>
   )
 }
