@@ -4,6 +4,7 @@
   justify-content: flex-start;
   align-items: flex-start;
   width: 100%;
+  min-height: 50vh;
   margin: 0;
   padding: 5.95% 5.5% 0 5.5%;
   box-sizing: border-box;

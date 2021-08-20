@@ -11,10 +11,10 @@ function SearchForm({ handleClickBySubmit }) {
   const { values, handleChange, errors, isValid, resetForm } = useFormWithValidation();
 
   const handleClickBySendData = () => {
-    handleClickBySubmit(values.name)
+    handleClickBySubmit(values.name, check)
     resetForm()
   }
-
+  
   const handleClickByCheckbox = () => {
     setCheck(!check)
   }
@@ -33,7 +33,6 @@ function SearchForm({ handleClickBySubmit }) {
                   value={values.name || ''}
                   onChange={handleChange}
                   pattern={movieNamePattern}
-                  minLength="2"
             ></input>
             <span className="search-section__error">{errors.name}</span>
           </div>          
