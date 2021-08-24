@@ -1,18 +1,17 @@
 import React from 'react';
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import './Navigation.css';
 
 
-function Navigation() {
+function Navigation({ currentPath }) {
 
-  const history = useHistory();
+ 
   const [showNavBar, setShowNavBar] = React.useState(false);
 
   const handleClickByShowNavBar = () => setShowNavBar(true);
   const handleClickByHideNavBar = () => setShowNavBar(false);
 
-  function checkPath(neededPath){
-    const currentPath = history.location.pathname;
+  function checkPath(neededPath){ 
     if (currentPath === neededPath) return true
     return false
   }

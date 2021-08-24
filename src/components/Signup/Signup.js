@@ -4,14 +4,13 @@ import './Signup.css';
 import { useFormWithValidation } from "../../utils/Validator/Validator"
 import { namePattern } from "../../utils/regExp"
 
-function Signup() {
+function Signup({ handleRegister }) {
 
   const { values, handleChange, errors, isValid, resetForm } = useFormWithValidation();
 
   const handleClickBySendData = () => {
-
-    resetForm()
-
+    handleRegister(values)
+    resetForm();
   }
 
   return (
@@ -39,7 +38,7 @@ function Signup() {
           </fieldset>
           <button type="button" className={`signup__button ${isValid ? '' : 'signup__button_invalid'}`} onClick={isValid ? handleClickBySendData : () => {}}>Зарегистрироваться</button>
         </form>
-        <p className="signup__text">Уже зарегистрированы? <Link className="signup__link" to="/signin">Регистрация</Link></p>
+        <p className="signup__text">Уже зарегистрированы? <Link className="signup__link" to="/signin">Войти</Link></p>
       </div>
     </section>
   )

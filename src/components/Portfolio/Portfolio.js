@@ -15,10 +15,10 @@ function Portfolio() {
             Я люблю слушать музыку, а ещё увлекаюсь спортом. Недавно решил разобрать с front-end разработкой.</p>
           <ul className="portfolio__list portfolio__list_type_sosial-nets">
             <li className="portfolio__list-item portfolio__list-item_type_sosial-net">
-              <Link className="portfolio__link portfolio__link_type_social-net" to="https://ru-ru.facebook.com/" rel="noopener noreferrer" target="_blank">Facebook</Link>
+              <a className="portfolio__link portfolio__link_type_social-net" href="https://ru-ru.facebook.com/" rel="noopener noreferrer" target="_blank">Facebook</a>
             </li>
             <li className="portfolio__list-item portfolio__list-item_type_sosial-net">
-              <Link className="portfolio__link portfolio__link_type_social-net" to="https://github.com/ivashenkojaroslaw" rel="noopener noreferrer" target="_blank">Github</Link>
+              <a className="portfolio__link portfolio__link_type_social-net" href="https://github.com/ivashenkojaroslaw" rel="noopener noreferrer" target="_blank">Github</a>
             </li>
           </ul>
         </div>
@@ -31,15 +31,15 @@ function Portfolio() {
         <ul className="portfolio__list portfolio__list_type_projects">
           <li className="portfolio__list-item portfolio__list-item_type_project">
             <p className="portfolio__text portfolio__text_type_project-name">Статичный сайт</p>
-            <Link className="portfolio__link portfolio__link_type_project" to="https://github.com/ivashenkojaroslaw/how-to-learn" rel="noopener noreferrer" target="_blank"> </Link>
+            <a className="portfolio__link portfolio__link_type_project" href="https://github.com/ivashenkojaroslaw/how-to-learn" rel="noopener noreferrer" target="_blank"> </a>
           </li>
           <li className="portfolio__list-item portfolio__list-item_type_project">
             <p className="portfolio__text portfolio__text_type_project-name">Адаптивный сайт</p>
-            <Link className="portfolio__link portfolio__link_type_project" to="https://github.com/ivashenkojaroslaw/russian-travel" rel="noopener noreferrer" target="_blank"> </Link>
+            <a className="portfolio__link portfolio__link_type_project" href="https://github.com/ivashenkojaroslaw/russian-travel" rel="noopener noreferrer" target="_blank"> </a>
           </li>
           <li className="portfolio__list-item portfolio__list-item_type_project">
             <p className="portfolio__text portfolio__text_type_project-name">Одностраничное приложение</p>
-            <Link className="portfolio__link portfolio__link_type_project" to="https://github.com/ivashenkojaroslaw/react-mesto-api-full" rel="noopener noreferrer" target="_blank"> </Link>
+            <a className="portfolio__link portfolio__link_type_project" href="https://github.com/ivashenkojaroslaw/react-mesto-api-full" rel="noopener noreferrer" target="_blank"> </a>
           </li>
         </ul>
       </div>

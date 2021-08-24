@@ -5,19 +5,20 @@ import { useFormWithValidation } from "../../utils/Validator/Validator";
 import { movieNamePattern } from "../../utils/regExp";
 
 
-function SearchForm({ handleClickBySubmit }) {
+function SearchForm({ searchMovies, filterMovies }) {
   
   const [check,  setCheck] = React.useState(true);
   const { values, handleChange, errors, isValid, resetForm } = useFormWithValidation();
 
   const handleClickBySendData = () => {
-    handleClickBySubmit(values.name, check)
-    resetForm()
+    searchMovies(values.name);    
   }
   
   const handleClickByCheckbox = () => {
-    setCheck(!check)
+    filterMovies(values.name || '', !check)
+    setCheck(!check);   
   }
+
 
   return (
     <section className="search-section">

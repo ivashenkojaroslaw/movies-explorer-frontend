@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from "react-router-dom";
 import './Promo.css';
 import promoPicture from '../../images/pictures/promo.png'
 
@@ -14,7 +13,7 @@ function Promo() {
         <img className="promo__picture" src={promoPicture} alt="Вступительная картинка"/>
       </div>
       <div className="promo__row promo__row_type_links">
-        <Link className="promo__link promo__link_type_learn-more" to="https://praktikum.yandex.ru" rel="noopener noreferrer" target="_blank">Узнать больше</Link>
+        <a className="promo__link promo__link_type_learn-more" href="https://praktikum.yandex.ru" rel="noopener noreferrer" target="_blank">Узнать больше</a>
       </div>
     </section>
   )
