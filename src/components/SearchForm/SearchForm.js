@@ -11,12 +11,14 @@ function SearchForm({ searchMovies, filterMovies }) {
   const { values, handleChange, errors, isValid, resetForm } = useFormWithValidation();
 
   const handleClickBySendData = () => {
-    searchMovies(values.name);    
+    searchMovies(values.name, check);    
   }
   
   const handleClickByCheckbox = () => {
-    filterMovies(values.name || '', !check)
-    setCheck(!check);   
+    if(isValid){
+      filterMovies(values.name || '', !check);
+      setCheck(!check);   
+    } 
   }
 
 

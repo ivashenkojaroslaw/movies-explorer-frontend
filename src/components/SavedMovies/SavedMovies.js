@@ -8,29 +8,28 @@ function SavedMovies({ currentPath, isShowPreloader, savedMoviesList, handleRemo
   
   const [findedMovies, setFindedMovies] = React.useState([]);
   
-  const searchSavedMovies = (keyWord) => {
-    handleShowPeloader()
-    const movies = finder.searchMovies(savedMoviesList, keyWord);
+  const searchSavedMovies = (keyWord, isIncludeShortFilm) => {
+    handleShowPeloader();
+    const movies = finder.searchMovies(savedMoviesList, keyWord, isIncludeShortFilm);
     if (movies.length > 0) {
       setFindedMovies(movies)
     }
     else {
-      handleShowFailToolTip('К сожалению, по вашему запросу ничего не найдено');
-      handleHidePreloader(false)
+      handleShowFailToolTip('К сожалению, по вашему запросу ничего не найдено');      
     }
+    handleHidePreloader();
   }
 
   const filterMovies = (keyWord, isIncludeShortFilm) => {
-    handleShowPeloader()
-    let movies = finder.searchMovies(savedMoviesList, keyWord);
-    movies = finder.filterMovies(movies, isIncludeShortFilm);
+    handleShowPeloader();
+    const movies = finder.searchMovies(savedMoviesList, keyWord, isIncludeShortFilm);
     if (movies.length > 0) {      
       setFindedMovies(movies)
     }
     else {
       handleShowFailToolTip('К сожалению, по вашему запросу ничего не найдено');      
     }
-    handleHidePreloader(false)
+    handleHidePreloader()
   }
 
   React.useEffect(() => {

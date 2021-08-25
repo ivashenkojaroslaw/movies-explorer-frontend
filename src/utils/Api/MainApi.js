@@ -1,4 +1,4 @@
-import { MainApi_URL } from '../constants';
+import { MAIN_API_URL } from '../constants';
 
 
 class MainApi {
@@ -69,7 +69,7 @@ class MainApi {
 }
 
 const mainApi = new MainApi({
-  baseURL: MainApi_URL,
+  baseURL: MAIN_API_URL,
   headers: {
     'Content-Type': 'application/json',
     'Authorization': `Bearer ${localStorage.getItem('token')}`,

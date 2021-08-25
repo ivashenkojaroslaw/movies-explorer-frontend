@@ -8,9 +8,9 @@ function Movies({handleClickBySubmit,isShowPreloader, currentPath, moviesList, s
 
   const [findedMovies, setFindedMovies] = React.useState([]);
 
-  const searchMovies = (keyWord) => {
+  const searchMovies = (keyWord, isIncludeShortFilm) => {
     handleShowPeloader();
-    const movies = finder.searchMovies(moviesList, keyWord);
+    const movies = finder.searchMovies(moviesList, keyWord, isIncludeShortFilm);
     if (movies.length > 0) {  
       setFindedMovies(movies);
     }
@@ -22,8 +22,7 @@ function Movies({handleClickBySubmit,isShowPreloader, currentPath, moviesList, s
 
   const filterMovies = (keyWord, isIncludeShortFilm) => {
     handleShowPeloader();
-    let movies = finder.searchMovies(moviesList, keyWord);
-    movies = finder.filterMovies(movies, isIncludeShortFilm);  
+    const movies = finder.searchMovies(moviesList, keyWord, isIncludeShortFilm);
     if (movies.length > 0) {        
       setFindedMovies(movies);
     }

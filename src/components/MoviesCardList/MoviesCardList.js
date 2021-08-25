@@ -2,16 +2,17 @@ import React from 'react';
 
 import './MoviesCardList.css';
 import MoviesCard from '../MoviesCard/MoviesCard';
+import { NUMBER_SHOWED_MOVIES } from '../../utils/constants';
 
 
 function MoviesCardList({ currentPath, movies, savedMovies, handleSave, handleRemove }) {
 
 
-  const [countShowedMovies, setCountShowedMovies] = React.useState(5);
+  const [countShowedMovies, setCountShowedMovies] = React.useState(NUMBER_SHOWED_MOVIES);
  
   const isSavedMovies = (currentPath === '/saved-movies') ? true : false;
   const handleClickByFurther = () => {
-    setCountShowedMovies(countShowedMovies + 5)
+    setCountShowedMovies(countShowedMovies + NUMBER_SHOWED_MOVIES)
   }
 
 
@@ -30,7 +31,7 @@ function MoviesCardList({ currentPath, movies, savedMovies, handleSave, handleRe
             }
             return (
               <MoviesCard
-                key={index}
+                key={item._id || item.id}
                 movie={item}
                 isSavedMovies={isSavedMovies}
                 handleSave={handleSave}

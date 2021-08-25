@@ -1,8 +1,8 @@
 
-import { MainApi_URL } from './constants'
+import { MAIN_API_URL } from './constants'
 
 export const register = (email, name, password) => {
-  return fetch(`${MainApi_URL}/signup`, {
+  return fetch(`${MAIN_API_URL}/signup`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -21,7 +21,7 @@ export const register = (email, name, password) => {
 }; 
 
 export const authorize = (email,password) => {
-  return fetch(`${MainApi_URL}/signin`, {
+  return fetch(`${MAIN_API_URL}/signin`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -37,7 +37,7 @@ export const authorize = (email,password) => {
 }; 
 
 export const checkToken = (token) => {
-  return fetch(`${MainApi_URL}/users/me`, {
+  return fetch(`${MAIN_API_URL}/users/me`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',

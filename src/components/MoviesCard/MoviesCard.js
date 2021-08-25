@@ -1,6 +1,6 @@
 import React from 'react';
 import './MoviesCard.css';
-import { MoviesApi_URL } from '../../utils/constants';
+import { MOVIES_API_URL } from '../../utils/constants';
 
 function MoviesCard({ movie, isSavedMovies, handleSave, handleRemove, isLiked }) {
 
@@ -48,7 +48,7 @@ function MoviesCard({ movie, isSavedMovies, handleSave, handleRemove, isLiked })
           ></button>
         </div>
         <div className="movies-card__wrap movies-card__wrap_type_picture">
-          <img className="movies-card__picture" src={`${isSavedMovies ? movie.image : `${MoviesApi_URL}${movie.image.url}`}`} alt={`Логотип фильма ${movie.nameRU}`}></img>
+          <img className="movies-card__picture" src={`${isSavedMovies ? movie.image : `${MOVIES_API_URL}${movie.image.url}`}`} alt={`Логотип фильма ${movie.nameRU}`}></img>
           <a href={movie.trailer} className='movies-card__link' rel="noopener noreferrer" target="_blank"> </a>
         </div>        
       </div>

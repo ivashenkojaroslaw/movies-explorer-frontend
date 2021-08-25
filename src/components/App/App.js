@@ -16,7 +16,7 @@ import Movies from '../Movies/Movies';
 import SavedMovies from '../SavedMovies/SavedMovies';
 import CurrentUserContext from '../../contexts/CurrentUserContext';
 
-import { MoviesApi_URL } from '../../utils/constants';
+import { MOVIES_API_URL } from '../../utils/constants';
 import moviesApi from '../../utils/Api/MoviesApi';
 import mainApi from '../../utils/Api/MainApi';
 import * as auth from '../../utils/auth';
@@ -62,8 +62,8 @@ function App() {
             email: data.data.email, name: data.data.name
           }
           setCurrentUserData({ ...currentUserData, ...userData });
-          //history.push('/movies');
-          history.goBack();
+          history.push('/movies');
+   
         })
         .catch(handleErrors);
     }
@@ -112,9 +112,8 @@ function App() {
     if (email && password && name) {
       auth.register(email, name, password)
         .then((res) => {
-          console.log(res)          
           handleShowSuccessErrorToolTip('Поздравляем! Вы успешно зарегистрировались.')
-          history.push('/signin');
+          history.push('/movies');
         })
         .catch(err => {
           handleShowErrorToolTip('Ошибка при регистрации. Возможно, указанный вами email уже зарегистрирован.')
@@ -135,7 +134,10 @@ function App() {
           setCurrentUserData(data.data);
           handleShowSuccessErrorToolTip('Вы успешно изменили данные!')
         })
-        .catch(handleErrors)
+        .catch(err => {
+          console.log(`ERROR - ${err}`);
+          handleShowFailToolTip('Ошибка при редактировании профиля');
+        })
     }
     else{
       handleShowSuccessErrorToolTip('Заполните форму!');
@@ -209,9 +211,9 @@ function App() {
 
   function saveMovie(movie) {
     mainApi.saveMovie({
-      ...movie, image: `${MoviesApi_URL}${movie.image.url}`,
+      ...movie, image: `${MOVIES_API_URL}${movie.image.url}`,
       trailer: movie.trailerLink,
-      thumbnail: `${MoviesApi_URL}${movie.image.formats.thumbnail.url}`,
+      thumbnail: `${MOVIES_API_URL}${movie.image.formats.thumbnail.url}`,
       movieId: movie.id
     })
       .then(data => {
@@ -282,7 +284,6 @@ function App() {
           <ProtectedRoute 
             path='/movies'                            
             loggedIn={loggedIn}
-            //handleClickBySubmit={searchMovies} 
             isShowPreloader={showPreloader} 
             currentPath={currentPath} 
             moviesList={moviesList} 
@@ -299,15 +300,13 @@ function App() {
           <ProtectedRoute 
             path='/saved-movies'                            
             loggedIn={loggedIn}
-            //handleClickBySubmit={searchSavedMovies} 
             currentPath={currentPath} 
             savedMoviesList={savedMoviesList}
             isShowPreloader={showPreloader} 
             handleRemove={removeMovie} 
             handleShowPeloader={handleShowPeloader}    
             handleHidePreloader={handleHidePreloader}
-            handleShowFailToolTip={handleShowFailToolTip}               
-            //handleUpdateMovies={updateSavedMovies}            
+            handleShowFailToolTip={handleShowFailToolTip}                       
             component = {SavedMovies}
           />
 
