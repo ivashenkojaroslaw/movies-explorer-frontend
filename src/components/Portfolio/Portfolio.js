@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from "react-router-dom";
 import './Portfolio.css';
 import me from '../../images/pictures/me.jpg'
 
