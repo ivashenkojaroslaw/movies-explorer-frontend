@@ -10,6 +10,10 @@
   align-items: center;
 }
 
+.header_hidden {
+  display: none;
+}
+
 .header_theme_dark {
   background-color: #202020;
 }

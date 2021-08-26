@@ -7,6 +7,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100vh;
 }
 
 .signup__window {
@@ -91,17 +92,19 @@
   color: #ee3465;
 }
 
-.signup__form-error {
+.signup__error {
   font-family: inherit;
   font-style: normal;
   font-weight: normal;
   font-size: 10px;
   line-height: 12px;
   color: #ee3465;
-  display: none;
+  display: block;
+  padding-top: 3px;
 }
 
-.signup__form-error_show {
+
+.signup_error_show {
   display: block;
 }
 
@@ -123,6 +126,16 @@
 }
 .signup__button:hover {
   opacity: 0.8;
+}
+
+.signup__button_invalid {
+  cursor: default;
+  background: #fff;
+  color: #000;
+}
+
+.signup__button_invalid:hover {
+  opacity: 1;
 }
 
 .signup__text {

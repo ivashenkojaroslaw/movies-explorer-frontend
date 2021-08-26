@@ -6,7 +6,15 @@
   margin: 0 auto 40px auto;
   padding: 6px;
   width: 100%;
-  background-color: #2f2f2f;
+  background-color: #2f2f2f;  
+}
+
+.movies-card__link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .movies-card__wrap {
@@ -25,6 +33,9 @@
   width: 20%;
   min-width: 220px;
   background: #202020;
+  position: relative;
+  top: 0;
+  left: 0;
 }
 
 .movies-card__header {
